@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
+// 29 login nao funciona 
 namespace Shop.Models
 {
   public class User
@@ -10,10 +11,10 @@ namespace Shop.Models
     [Required(ErrorMessage = "Este campo é obrigatório")]
     [MaxLength(20, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
     [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
-    public string UserName { get; set; }
+    public string Username { get; set; }
 
     [Required(ErrorMessage = "Este campo é obrigatório")]
-    [MaxLength(20, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
+    [MaxLength(60, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
     [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 60 caracteres")]
     public string Password { get; set; }
 
