@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Shop.Models
 {
-  public class Produc
+  public class Product
   {
     [Key]
     public int Id { get; set; }
