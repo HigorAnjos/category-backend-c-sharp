@@ -9,7 +9,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // use in memory database
-builder.Services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Database"));
+// builder.Services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Database"));
+// builder.Services.AddScoped<DataContext, DataContext>();
+
+// use sqlServer database
+var Configuration = builder.Configuration;
+System.Console.WriteLine($"ConnectionString: {Configuration.GetConnectionString("connectionString")}");
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 builder.Services.AddScoped<DataContext, DataContext>();
 
 var app = builder.Build();

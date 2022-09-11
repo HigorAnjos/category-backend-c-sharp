@@ -1,0 +1,18 @@
+version: "3"
+services:
+  sqldata:
+      image: 'mcr.microsoft.com/mssql/server'
+      ports:
+          - '1433:1433'
+      environment:
+          - ACCEPT_EULA=Y
+          - MSSQL_SA_PASSWORD="1234asdf@#?"
+      # volumes:
+      # - './drive:/var/opt/mssql'
+      
+# compose nao funciona apenas ->    
+# docker run --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1q2w3e4r@#$" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+# Server: localhost, 1433
+# auth: SQL login
+# user name: sa
+# password: 1q2w3e4r@#$
