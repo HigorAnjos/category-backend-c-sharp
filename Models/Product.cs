@@ -23,6 +23,6 @@ namespace Shop.Models
     [Range(1, int.MaxValue, ErrorMessage = "Categoria inválida")]
     public int CategoryId { get; set; }
 
-    public Category Category { get; set; } // propriedade de referência
+    public Category? Category { get; set; } // propriedade de referência
   }
 }
